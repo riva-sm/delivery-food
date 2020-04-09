@@ -1,75 +1,219 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 *:after,
 *:before {
-    box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
+  background: linear-gradient(
+    180deg,
+    rgba(245, 245, 245, 0) 1.04%,
+    #f5f5f5 100%
+  );
 }
 
 .container {
-    width: 1200px;
-    margin: auto;
+  width: 1200px;
+  margin: auto;
 }
 
 .header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-top: 44px;
-    margin-bottom: 40px;
-    font-size: 16px;
-    line-height: 1.5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 44px;
+  margin-bottom: 40px;
+  font-size: 16px;
+  line-height: 1.5;
 }
 
 .search {
-    width: 690px;
-    background: #FFFFFF;
-    color: #595959;
-    border: 1px solid #D9D9D9;
-    border-radius: 2px;
-    font-size: 16px;
-    line-height: 1.5;
-    background-image: url(../img/home.svg);
-    background-repeat: no-repeat;
-    background-position: left 11px center;
-    padding-left: 34px;
-    height: 40px;
+  width: 690px;
+  background: #ffffff;
+  color: #595959;
+  border: 1px solid #d9d9d9;
+  border-radius: 2px;
+  font-size: 16px;
+  line-height: 1.5;
+  background-image: url(../img/home.svg);
+  background-repeat: no-repeat;
+  background-position: left 11px center;
+  padding-left: 34px;
+  height: 40px;
 }
 
 .search::placeholder {
-    color: #BFBFBF;
+  color: #bfbfbf;
 }
 
 .buttons {
-    display: flex;
-    align-items: center;
-
+  display: flex;
+  align-items: center;
 }
 
 .button {
-    padding: 12px 16px;
-    color: #595959;
-    background: #fff;
-    border: 1px solid #D9D9D9;
-    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.0015);
-    border-radius: 2px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  padding: 12px 16px;
+  color: #595959;
+  background: #fff;
+  border: 1px solid #d9d9d9;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.0015);
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
 
 .user {
-    background: #1890FF;
-    color: #FFFFFF;
-    border: 1px solid #1890FF;
-    margin-right: 9px;
+  background: #1890ff;
+  color: #ffffff;
+  border: 1px solid #1890ff;
+  margin-right: 9px;
 }
 
 .button-icon {
-    margin-right: 4px;
+  margin-right: 4px;
+}
+
+.promo {
+  color: #302c34;
+  line-height: 1.17;
+  box-shadow: 0px 7px 12px rgba(90, 90, 153, 0.1);
+  border-radius: 10px;
+  padding: 68px 0 68px 70px;
+  background: #fff1b8 url(../img/bg.png) no-repeat top -83px right -161px /
+    600px;
+  margin-bottom: 56px;
+}
+
+.promo-title {
+  font-size: 39px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.promo-text {
+  max-width: 540px;
+  font-size: 24px;
+}
+
+.restaurants {
+  padding-bottom: 90px;
+
+}
+.section-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.restaurants {
+  color: #000;
+}
+
+.section-row {
+  margin-bottom: 45px;
+}
+
+.section-title {
+  font-size: 36px;
+  line-height: 1.16;
+  font-weight: 700;
+}
+
+.search-input {
+  width: 306px;
+  background-image: url(../img/search.svg);
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.card {
+  background: #ffffff;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
+  border-radius: 7px;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.card-img {
+  width: 384px;
+  height: 250px;
+  object-fit: cover;
+}
+
+.card-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.card-title {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.33;
+}
+
+.card-tag {
+  font-size: 12px;
+  color: #fff;
+  background: #262626;
+  border-radius: 2px;
+  padding: 1px 8px;
+  line-height: 1.66;
+}
+
+.card-text {
+  padding: 20px 35px 23px;
+}
+
+.card-info {
+  display: flex;
+  font-size: 18px;
+  color: #8c8c8c;
+}
+
+.rating {
+  color: #ffc107;
+  margin-right: 26px;
+}
+
+.rating-star {
+  margin-right: 7px;
+}
+
+.price {
+  margin-right: 10px;
+}
+
+.price:after {
+  content: "";
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  background: #8c8c8c;
+  vertical-align: middle;
+  border-radius: 50%;
+  margin-left: 10px;
 }
