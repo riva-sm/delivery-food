@@ -20,11 +20,6 @@ p {
 
 body {
   font-family: "Roboto", sans-serif;
-  background: linear-gradient(
-    180deg,
-    rgba(245, 245, 245, 0) 1.04%,
-    #f5f5f5 100%
-  );
 }
 
 .container {
@@ -32,6 +27,7 @@ body {
   margin: auto;
 }
 
+/*Шапка*/
 .header {
   display: flex;
   align-items: center;
@@ -43,18 +39,22 @@ body {
 }
 
 .search {
-  width: 690px;
   background: #ffffff;
   color: #595959;
   border: 1px solid #d9d9d9;
   border-radius: 2px;
   font-size: 16px;
   line-height: 1.5;
-  background-image: url(../img/home.svg);
+
   background-repeat: no-repeat;
   background-position: left 11px center;
   padding-left: 34px;
   height: 40px;
+}
+
+.address {
+  flex: 0.8;
+  background-image: url(../img/home.svg);
 }
 
 .search::placeholder {
@@ -67,7 +67,7 @@ body {
 }
 
 .button {
-  padding: 12px 16px;
+  padding: 8px 16px;
   color: #595959;
   background: #fff;
   border: 1px solid #d9d9d9;
@@ -77,9 +77,10 @@ body {
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  line-height: 1.5;
 }
 
-.user {
+.button-primary {
   background: #1890ff;
   color: #ffffff;
   border: 1px solid #1890ff;
@@ -90,14 +91,20 @@ body {
   margin-right: 4px;
 }
 
+/*Главная*/
+.main {
+  background: linear-gradient(180deg,
+      rgba(245, 245, 245, 0) 1.04%,
+      #f5f5f5 100%);
+}
+
 .promo {
   color: #302c34;
   line-height: 1.17;
   box-shadow: 0px 7px 12px rgba(90, 90, 153, 0.1);
   border-radius: 10px;
   padding: 68px 0 68px 70px;
-  background: #fff1b8 url(../img/bg.png) no-repeat top -83px right -161px /
-    600px;
+  background: #fff1b8 url(../img/bg.png) no-repeat top -83px right -161px / 600px;
   margin-bottom: 56px;
 }
 
@@ -114,11 +121,10 @@ body {
 
 .restaurants {
   padding-bottom: 90px;
-
 }
+
 .section-row {
   display: flex;
-  justify-content: space-between;
   align-items: center;
 }
 
@@ -134,11 +140,13 @@ body {
   font-size: 36px;
   line-height: 1.16;
   font-weight: 700;
+  margin-right: 30px;
 }
 
 .search-input {
   width: 306px;
   background-image: url(../img/search.svg);
+  margin-left: auto;
 }
 
 .cards {
@@ -154,12 +162,20 @@ body {
   border-radius: 7px;
   overflow: hidden;
   margin-bottom: 30px;
+  flex-basis: 32%;
+  text-decoration: none;
 }
 
 .card-img {
   width: 384px;
   height: 250px;
   object-fit: cover;
+}
+
+.rest-img {
+  width: 300px;
+  height: 200px;
+  object-fit: contain;
 }
 
 .card-heading {
@@ -175,6 +191,8 @@ body {
   line-height: 1.33;
 }
 
+
+
 .card-tag {
   font-size: 12px;
   color: #fff;
@@ -185,13 +203,17 @@ body {
 }
 
 .card-text {
-  padding: 20px 35px 23px;
+  /* padding: 20px 35px 23px; */
+  padding: 24px 24px 30px 24px;
 }
 
 .card-info {
   display: flex;
+  align-items: center;
   font-size: 18px;
   color: #8c8c8c;
+  flex-wrap: wrap;
+  line-height: 1.16;
 }
 
 .rating {
@@ -216,4 +238,265 @@ body {
   vertical-align: middle;
   border-radius: 50%;
   margin-left: 10px;
+}
+
+.category {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  max-width: 150px;
+}
+
+/*Подвал*/
+.footer {
+  padding: 60px 0;
+}
+
+.footer-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-nav {
+  margin-right: auto;
+  margin-left: 35px;
+}
+
+.footer-link {
+  display: inline-block;
+  color: #595959;
+  font-size: 18px;
+  line-height: 1.16;
+  text-decoration: none;
+}
+
+.footer-link:not(:last-child) {
+  margin-right: 15px;
+}
+
+.socials-links {
+  display: flex;
+  align-items: center;
+}
+
+.social-link:not(:last-child) {
+  margin-right: 21px;
+}
+
+/*Рестораны*/
+.card-title-reg {
+  font-weight: 400;
+}
+
+.card-buttons {
+  display: flex;
+  align-items: center;
+  margin-top: 24px;
+}
+
+.button-card-text {
+  margin-right: 5px;
+}
+
+.card-price-bold {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.6;
+  color: #000000;
+  /* margin-left: 32px; */
+}
+
+/*Адаптив*/
+
+@media (max-width: 1366px) {
+  .container {
+    max-width: 960px;
+  }
+
+  .promo {
+    background-size: 500px;
+  }
+
+  .card-title {
+    font-size: 18px;
+  }
+
+  .card-info {
+    font-size: 14px;
+  }
+
+  .rating {
+    margin-right: 10px;
+  }
+}
+
+@media (max-width: 992px) {
+  .container {
+    max-width: 750px;
+  }
+
+  .promo {
+    padding: 50px;
+    background-position: top -89px right -213px;
+  }
+
+  .promo-title {
+    font-size: 30px;
+  }
+
+  .promo-text {
+    font-size: 18px;
+    max-width: 400px;
+  }
+
+  .card {
+    flex-basis: 49%;
+  }
+
+  .footer-link {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 560px;
+  }
+
+  .promo {
+    background-size: 400px;
+    line-height: 1.4;
+  }
+
+  .promo-title {
+    font-size: 24px;
+  }
+
+  .promo-text {
+    font-size: 16px;
+    max-width: 350px;
+  }
+
+  .card-info {
+    flex-wrap: wrap;
+  }
+
+  .card .rating {
+    flex-basis: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 578px) {
+  .container {
+    width: 90%;
+  }
+
+  .header {
+    flex-wrap: wrap;
+  }
+
+  .address {
+    order: 5;
+    margin-top: 15px;
+    flex: 1;
+  }
+
+  .promo {
+    background-image: none;
+  }
+
+  .promo-title {
+    margin-bottom: 10px;
+  }
+
+  .section-title {
+    font-size: 20px;
+  }
+
+  .card {
+    flex-basis: 100%;
+  }
+
+  .card-img {
+    width: 100%;
+  }
+
+  .footer {
+    padding: 30px 0;
+  }
+
+  .footer-wrap {
+    align-items: flex-start;
+  }
+
+  .footer-nav {
+    order: 0;
+    margin-left: 0;
+    margin-right: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer-logo {
+    order: 1;
+    margin-right: 15px;
+  }
+
+  .socials-links {
+    order: 2;
+  }
+}
+
+@media (max-width: 480px) {
+  .button-text {
+    display: none;
+  }
+
+  .button {
+    min-height: 40px;
+    padding: 8px 23px;
+  }
+
+  .button-icon {
+    margin-right: 0;
+  }
+
+  .promo {
+    padding: 20px;
+  }
+
+  .section-row {
+    flex-wrap: wrap;
+  }
+
+  .section-title {
+    margin-bottom: 15px;
+  }
+
+  .footer-wrap {
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-logo {
+    order: 0;
+    margin-bottom: 20px;
+  }
+
+  .footer-nav {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .footer-link:not(:last-child) {
+    margin-right: 0;
+  }
+
+  .footer-link {
+    font-size: 16px;
+    line-height: 1.4;
+  }
 }
