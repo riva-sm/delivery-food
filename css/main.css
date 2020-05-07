@@ -27,6 +27,10 @@ body {
   margin: auto;
 }
 
+.hide {
+  display: none;
+}
+
 /*Шапка*/
 .header {
   display: flex;
@@ -143,9 +147,31 @@ body {
   box-shadow: 0px 7px 12px rgba(90, 90, 153, 0.1);
   border-radius: 10px;
   padding: 68px 0 68px 70px;
-  background: #fff1b8 url(../img/bg.png) no-repeat top -83px right -161px / 600px;
   margin-bottom: 56px;
 }
+
+.promo-slider {
+  width: 600px;
+  height: 300px;
+
+}
+
+.pizza {
+  background: #fff1b8 url(../img/promo/pizza.png) no-repeat top -100px right -250px / 830px
+}
+
+.kebab {
+  background: #D6E4FF url(../img/promo/kebab.png) no-repeat top 45px right 40px / 450px;
+}
+
+.vegetables {
+  background: #FFF566 url(../img/promo/vegetables.png) no-repeat top 0 right 0 / 825px
+}
+
+.sushi {
+  background: #FFF1F0 url(../img/promo/sushi.png) no-repeat top 10px right 15px / 500px
+}
+
 
 .promo-title {
   font-size: 39px;
@@ -504,8 +530,25 @@ body {
     max-width: 960px;
   }
 
-  .promo {
-    background-size: 500px;
+
+  .pizza {
+    background-position: center right -300px;
+    background-size: 750px;
+  }
+
+
+  .kebab {
+    background-position: top -5px right -93px;
+    background-size: 530px;
+  }
+
+  .vegetables {
+    background-position: top 0 right -93px;
+    background-size: 820px;
+  }
+
+  .sushi {
+    background-position: center right -90px;
   }
 
   .card-title {
@@ -526,9 +569,26 @@ body {
     max-width: 750px;
   }
 
-  .promo {
+
+  .pizza {
     padding: 50px;
-    background-position: top -89px right -213px;
+    background-size: 500px;
+    background-position: center right -200px;
+  }
+
+
+  .kebab {
+    background-position: top 55px right -100px;
+    background-size: 385px;
+  }
+
+  .vegetables {
+    background-position: top 0 right -280px;
+    background-size: 810px;
+  }
+
+  .sushi {
+    background-position: top 30px right -175px;
   }
 
   .promo-title {
@@ -554,18 +614,37 @@ body {
     max-width: 560px;
   }
 
-  .promo {
+
+  .pizza {
     background-size: 400px;
-    line-height: 1.4;
+    background-position: bottom 50px right -200px;
+  }
+
+
+  .kebab {
+    background-position: top -5px right -74px;
+    background-size: 300px;
+  }
+
+  .vegetables {
+    background-position: top 0 right -240px;
+    background-size: 702px;
+  }
+
+  .sushi {
+    background-position: top -24px right -75px;
+    background-size: 302px;
   }
 
   .promo-title {
     font-size: 24px;
+    line-height: 1.4;
   }
 
   .promo-text {
     font-size: 16px;
     max-width: 350px;
+    line-height: 1.4;
   }
 
   .card-info {

@@ -8,6 +8,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/normalize.css" />
   <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
   <link rel="stylesheet" href="css/main.css" />
 </head>
 
@@ -38,41 +39,41 @@
       </div>
     </header>
     <!-- / .header  -->
-
   </div>
   <!-- /.container -->
   <main class="main">
     <div class="container">
-      <!-- promo -->
-      <section class="promo">
-        <h1 class="promo-title">
-          Онлайн-сервис <br> доставки еды на дом
-        </h1>
-        <p class="promo-text">
-          Блюда из любимого ресторана привезет курьер в перчатках, маске и с антисептиком
-        </p>
-      </section>
-      <!-- /.promo -->
-      <!-- <section class="promo kebab">
-					<h1 class="promo-title">Шашлыки на майские <br> со скидкой 35%</h1>
-					<p class="promo-text">
-						Закажите шашлыки в любом ресторане до 10 мая и получите скидку по промокоду OMAGAD
-					</p>
-				</section>
-				<section class="promo vegetables">
-					<h1 class="promo-title">Скидка 20% на всю еду <br> по промокоду LOVE.JS</h1>
-					<p class="promo-text">
-						Блюдо из ресторана привезут вместе с двумя подарочными книгами по фронтенду
-					</p>
-				</section>
-				<section class="promo sushi">
-					<h1 class="promo-title">Сеты со скидкой до 30% <br> в ресторанах</h1>
-					<p class="promo-text">
-						Скидки на сеты до 30 мая по промокоду DADADA
-					</p>
-				</section> -->
+      <div class="container-promo swiper-container">
+        <div class="swiper-wrapper">
+          <section class="swiper-slide promo pizza">
+            <h1 class="promo-title">Онлайн-сервис <br />доставки еды на дом</h1>
+            <p class="promo-text">
+              Блюда из любимого ресторана привезет курьер в перчатках, маске и с антисептиком
+            </p>
+          </section>
+          <section class="swiper-slide promo kebab">
+            <h1 class="promo-title">Шашлыки на майские <br> со скидкой 35%</h1>
+            <p class="promo-text">
+              Закажите шашлыки в любом ресторане до 10 мая и получите скидку по промокоду OMAGAD
+            </p>
+          </section>
+          <section class="swiper-slide promo vegetables">
+            <h1 class="promo-title">Скидка 20% на всю еду <br> по промокоду LOVE.JS</h1>
+            <p class="promo-text">
+              Блюдо из ресторана привезут вместе с двумя подарочными книгами по фронтенду
+            </p>
+          </section>
+          <section class="swiper-slide promo sushi">
+            <h1 class="promo-title">Сеты со скидкой до 30% <br> в ресторанах</h1>
+            <p class="promo-text">
+              Скидки на сеты до 30 мая по промокоду DADADA
+            </p>
+          </section>
+        </div>
+        <!-- /.swiper-wrapper -->
+      </div>
+      <!-- /.container-promo swiper-container -->
 
-      <!-- restaurants -->
       <section class="restaurants">
         <div class="section-row">
           <h2 class="section-title">
@@ -80,157 +81,39 @@
           </h2>
           <input type="search" class="search search-input" placeholder="Поиск блюд и ресторанов">
         </div>
-        <div class="cards">
-          <a href="restaurant.html" class="card wow fadeInUp" data-wow-delay="0.2s">
-            <img src="img/img1.jpg" alt="Пицца плюс" class="card-img">
-            <div class="card-text">
-              <div class="card-heading">
-                <h3 class="card-title">Пицца плюс</h3>
-                <span class="card-tag tag">50 мин</span>
-              </div>
-              <!-- /.card-heading -->
-              <div class="card-info">
-                <div class="rating">
-                  <img src="img/star.svg" alt="star" class="rating-star">
-                  4.5
-                </div>
-                <div class="price">
-                  От 900 ₽
-                </div>
-                <div class="category">
-                  Пицца
-                </div>
-              </div>
-              <!-- /.card-info -->
-            </div>
-          </a>
-          <!-- /.card -->
-          <a href="restaurant.html" class="card wow fadeInUp" data-wow-delay="0.4s">
-            <img src="img/img2.jpg" alt="Тануки" class="card-img">
-            <div class="card-text">
-              <div class="card-heading">
-                <h3 class="card-title">
-                  Тануки</h3>
-                <span class="card-tag tag">60 мин</span>
-              </div>
-              <!-- /.card-heading -->
-              <div class="card-info">
-                <div class="rating">
-                  <img src="img/star.svg" alt="star" class="rating-star">
-                  4.5
-                </div>
-                <div class="price">
-                  От 1200 ₽
-                </div>
-                <div class="category">
-                  Суши
-                </div>
-              </div>
-              <!-- /.card-info -->
-            </div>
-            </>
-            <!-- /.card -->
-            <a href="restaurant.html" class="card wow fadeInUp" data-wow-delay="0.6s">
-              <img src="img/img3.jpg" alt="FoodBand" class="card-img">
-              <div class="card-text">
-                <div class="card-heading">
-                  <h3 class="card-title">FoodBand</h3>
-                  <span class="card-tag tag">50 мин</span>
-                </div>
-                <!-- /.card-heading -->
-                <div class="card-info">
-                  <div class="rating">
-                    <img src="img/star.svg" alt="star" class="rating-star">
-                    4.5
-                  </div>
-                  <div class="price">
-                    От 900 ₽
-                  </div>
-                  <div class="category">
-                    Суши, Пицца
-                  </div>
-                </div>
-                <!-- /.card-info -->
-              </div>
-            </a>
-            <!-- /.card -->
-            <a href="restaurant.html" class="card wow fadeInUp" data-wow-delay="0.2s">
-              <img src="img/img4.jpg" alt="Жадина-пицца" class="card-img">
-              <div class="card-text">
-                <div class="card-heading">
-                  <h3 class="card-title">Жадина-пицца</h3>
-                  <span class="card-tag tag">90 мин</span>
-                </div>
-                <!-- /.card-heading -->
-                <div class="card-info">
-                  <div class="rating">
-                    <img src="img/star.svg" alt="star" class="rating-star">
-                    4.5
-                  </div>
-                  <div class="price">
-                    От 800 ₽
-                  </div>
-                  <div class="category">
-                    Суши
-                  </div>
-                </div>
-                <!-- /.card-info -->
-              </div>
-            </a>
-            <!-- /.card -->
-            <a href="restaurant.html" class="card wow fadeInUp" data-wow-delay="0.4s">
-              <img src="img/img5.jpg" alt="Точка еды" class="card-img">
-              <div class="card-text">
-                <div class="card-heading">
-                  <h3 class="card-title">Точка еды</h3>
-                  <span class="card-tag tag">50 мин</span>
-                </div>
-                <!-- /.card-heading -->
-                <div class="card-info">
-                  <div class="rating">
-                    <img src="img/star.svg" alt="star" class="rating-star">
-                    4.5
-                  </div>
-                  <div class="price">
-                    От 900 ₽
-                  </div>
-                  <div class="category">
-                    Пицца, суши
-                  </div>
-                </div>
-                <!-- /.card-info -->
-              </div>
-            </a>
-            <!-- /.card -->
-            <a href="restaurant.html" class="card wow fadeInUp" data-wow-delay="0.6s">
-              <img src="img/img6.jpg" alt="PizzaBurger" class="card-img">
-              <div class="card-text">
-                <div class="card-heading">
-                  <h3 class="card-title">PizzaBurger</h3>
-                  <span class="card-tag tag">50 мин</span>
-                </div>
-                <!-- /.card-heading -->
-                <div class="card-info">
-                  <div class="rating">
-                    <img src="img/star.svg" alt="star" class="rating-star">
-                    4.5
-                  </div>
-                  <div class="price">
-                    От 750 ₽
-                  </div>
-                  <div class="category">
-                    Пицца
-                  </div>
-                </div>
-                <!-- /.card-info -->
-              </div>
-            </a>
-            <!-- /.card -->
+        <div class="cards cards-restaurants">
+
         </div>
         <!-- /.cards -->
       </section>
       <!-- /.restaurants -->
+      <section class="menu hide">
+        <div class="section-row">
+          <h2 class="section-title">
+            Тануки
+          </h2>
+          <div class="card-info">
+            <div class="rating">
+              <img src="img/star.svg" alt="star" class="rating-star" />
+              4.5
+            </div>
+            <div class="price">
+              От 1200 ₽
+            </div>
+            <div class="category">
+              Суши
+            </div>
+          </div>
+          <!-- ./ .card-info -->
+        </div>
+        <!-- / .section-row -->
+        <div class="cards cards-menu">
+
+        </div>
+        <!-- /.cards -->
+      </section>
     </div>
+    <!--  .container  -->
   </main>
   <footer class="footer">
     <div class="container">
@@ -354,6 +237,7 @@
   <script>
     new WOW().init();
   </script>
+  <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
   <script src="js/main.js"></script>
 </body>
 
