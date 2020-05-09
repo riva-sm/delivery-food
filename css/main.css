@@ -282,8 +282,15 @@ body {
 }
 
 .rating {
-  color: #ffc107;
+  background-image: url("../img/icon/rating.svg");
+  background-repeat: no-repeat;
+  background-position: 0 7px;
+  padding-left: 20px;
   margin-right: 26px;
+  color: #ffc107;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 32px;
 }
 
 .rating-star {

@@ -1,5 +1,8 @@
 'use-strict';
 
+// https://www.youtube.com/watch?v=KOREBTAoN4Q&feature=emb_logo
+// 1:38:50
+
 const shoppingCart = document.querySelector('#shopping-cart'),
     modal = document.querySelector('.modal'),
     close = document.querySelector('.close'),
@@ -15,7 +18,13 @@ const shoppingCart = document.querySelector('#shopping-cart'),
     restaurants = document.querySelector('.restaurants'),
     menu = document.querySelector('.menu'),
     logo = document.querySelector('.logo'),
-    cardsMenu = document.querySelector('.cards-menu');
+    cardsMenu = document.querySelector('.cards-menu'),
+    restaurantTitle = document.querySelector('.restaurant-title'),
+    rating = document.querySelector('.rating'),
+    minPrice = document.querySelector('.price'),
+    category = document.querySelector('.category'),
+    searchInput = document.querySelector('.search-input');
+
 
 let login = localStorage.getItem('gloDelivery');
 
@@ -136,11 +145,14 @@ function createCardRestaurant({
     time_of_delivery: timeOfDelivery
 }) {
 
+    const card = document.createElement('a');
+    card.className = 'card card-restaurant wow fadeInUp';
+    card.products = products;
+    card.info = [name, price, stars, kitchen];
 
     // получаем разметку карточки ресторана
-    const card = `
-        <a class="card card-restaurant wow fadeInUp" data-wow-delay="0.2s" data-products="${products}">
-        <img src="${image}" alt="Тануки" class="card-img">
+    card.insertAdjacentHTML('beforeend', `
+        <img src="${image}" alt="${name}" class="card-img">
             <div class="card-text">
                 <div class="card-heading">
                 <h3 class="card-title">${name}</h3>
@@ -148,15 +160,15 @@ function createCardRestaurant({
             </div>
             <div class="card-info">
                 <div class="rating">
-                    <img src="img/star.svg" alt="star" class="rating-star">${stars}</div>
+                    ${stars}</div>
                 <div class="price">От ${price} ₽</div>
                 <div class="category">${kitchen}</div>
             </div>
             </div>
-        </a>
-    `;
+    `);
 
-    cardsRestaurants.insertAdjacentHTML('beforeend', card);
+
+    cardsRestaurants.insertAdjacentElement('beforeend', card);
 
 
 };
@@ -176,7 +188,7 @@ function createCardGood({
     card.className = 'card';
     card.insertAdjacentHTML('beforeend', `
 
-            <img src="${image}" alt="Окинава стандарт" class="card-img rest-img" />
+            <img src="${image}" alt="${name}" class="card-img rest-img" />
             <div class="card-text">
             <div class="card-heading">
                 <h3 class="card-title card-title-reg">${name}</h3>
@@ -201,29 +213,34 @@ function createCardGood({
 }
 
 
-// открываем страницу ресторана
+// открываем меню ресторана
 function openGoods(event) {
     const target = event.target;
 
-    const restaurant = target.closest('.card-restaurant');
+
     if (login) {
-        // если пользователь неавторизован, открывается окно авторизации
+        const restaurant = target.closest('.card-restaurant');
+
         if (restaurant) {
 
-            console.log(restaurant.dataset.products);
-
+            const [name, price, stars, kitchen] = restaurant.info;
 
             cardsMenu.textContent = ''; // очищаем карточки
             containerPromo.classList.add('hide'); // скрываем промо
             restaurants.classList.add('hide'); // скрываем рестораны
             menu.classList.remove('hide'); // открываем меню
 
-            getData(`./db/${restaurant.dataset.products}`).then(function (data) {
+            restaurantTitle.textContent = name;
+            rating.textContent = stars;
+            minPrice.textContent = `От ${price} ₽`;
+            category.textContent = kitchen;
+
+            getData(`./db/${restaurant.products}`).then(function (data) {
                 data.forEach(createCardGood); // генерируем карточки ресторанов
             });
 
         } else {
-            toggleModalAuth();
+            toggleModalAuth(); // если пользователь неавторизован, открывается окно авторизации
         }
     }
 
@@ -243,6 +260,63 @@ function init() {
     cardsRestaurants.addEventListener('click', openGoods);
 
     logo.addEventListener('click', returnMain);
+
+    searchInput.addEventListener('keydown', function (event) {
+        if (event.keyCode === 13) {
+            const target = event.target;
+            const value = target.value.toLowerCase().trim();
+
+            target.value = '';
+            if (!value || value.length < 2) {
+                target.style.backgroundColor = 'tomato';
+                setTimeout(function () {
+                    target.style.backgroundColor = '';
+                }, 2000);
+                return;
+            }
+
+            const goods = []; // все товары по поиску
+
+            getData('./db/partners.json')
+                .then(function (data) {
+                    const products = data.map(function (item) {
+                        return item.products;
+                    });
+
+                    products.forEach(function (product) {
+                        getData(`./db/${product}`)
+                            .then(function (data) {
+                                goods.push(...data);
+
+                                const searchGoods = goods.filter(function (item) {
+                                    return item.name.toLowerCase().includes(value);
+                                });
+                                console.log(searchGoods);
+
+                                cardsMenu.textContent = ''; // очищаем карточки
+                                containerPromo.classList.add('hide'); // скрываем промо
+                                restaurants.classList.add('hide'); // скрываем рестораны
+                                menu.classList.remove('hide'); // открываем меню
+
+                                restaurantTitle.textContent = 'Результат поиска';
+                                rating.textContent = '';
+                                minPrice.textContent = '';
+                                category.textContent = '';
+
+                                return searchGoods;
+
+                            })
+                            .then(function (data) {
+                                data.forEach(createCardGood);
+                            });
+                    });
+
+
+                });
+
+        }
+
+    });
 
 
     // слайдер
